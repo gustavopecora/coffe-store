@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reserva Registrada | Café & Sabor</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+    <header>
+
+        <div class="logo">
+            ☕ Café & Sabor
+        </div>
+
+        <nav>
+
+            <a href="{{ url_for('index') }}">
+                Início
+            </a>
+
+            <a href="{{ url_for('reserva') }}">
+                Nova reserva
+            </a>
+
+            <a href="{{ url_for('listar_reservas') }}">
+                Reservas
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         CONTEÚDO PRINCIPAL
+    ========================== -->
+
+    <main>
+
+        <section class="confirmacao">
+
+            <!-- Ícone -->
+
+            <div class="confirmacao-icon">
+                ✓
+            </div>
+
+
+            <span class="subtitle">
+                RESERVA REGISTRADA
+            </span>
+
+
+            <h1>
+                Tudo certo, {{ reserva.nome }}!
+            </h1>
+
+
+            <p class="mensagem">
+                Sua reserva foi registrada com sucesso.
+                Confira os detalhes abaixo.
+            </p>
+
+
+            <!-- =========================
+                 DETALHES DA RESERVA
+            ========================== -->
+
+            <div class="reserva-detalhes">
+
+
+                <!-- ID -->
+
+                <div class="detalhe">
+
+                    <span class="detalhe-label">
+                        Código da reserva
+                    </span>
+
+                    <strong>
+                        #{{ reserva.id }}
+                    </strong>
+
+                </div>
+
+
+                <!-- NOME -->
+
+                <div class="detalhe">
+
+                    <span class="detalhe-label">
+                        Nome
+                    </span>
+
+                    <strong>
+                        {{ reserva.nome }}
+                    </strong>
+
+                </div>
+
+
+                <!-- DATA -->
+
+                <div class="detalhe">
+
+                    <span class="detalhe-label">
+                        Data
+                    </span>
+
+                    <strong>
+                        {{ reserva.data }}
+                    </strong>
+
+                </div>
+
+
+                <!-- HORÁRIO -->
+
+                <div class="detalhe">
+
+                    <span class="detalhe-label">
+                        Horário
+                    </span>
+
+                    <strong>
+                        {{ reserva.horario }}
+                    </strong>
+
+                </div>
+
+
+                <!-- NÚMERO DE PESSOAS -->
+
+                <div class="detalhe">
+
+                    <span class="detalhe-label">
+                        Número de pessoas
+                    </span>
+
+                    <strong>
+                        {{ reserva.pessoas }}
+                    </strong>
+
+                </div>
+
+
+                <!-- CATEGORIA -->
+
+                <div class="detalhe">
+
+                    <span class="detalhe-label">
+                        Categoria
+                    </span>
+
+                    <strong>
+                        {{ reserva.categoria }}
+                    </strong>
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="detalhe">
+
+                    <span class="detalhe-label">
+                        Status
+                    </span>
+
+                    <strong>
+                        {{ reserva.status }}
+                    </strong>
+
+                </div>
+
+
+                <!-- OBSERVAÇÃO -->
+
+                {% if reserva.observacao %}
+
+                <div class="detalhe observacao">
+
+                    <span class="detalhe-label">
+                        Observação
+                    </span>
+
+                    <strong>
+                        {{ reserva.observacao }}
+                    </strong>
+
+                </div>
+
+                {% endif %}
+
+            </div>
+
+
+            <!-- =========================
+                 AÇÕES
+            ========================== -->
+
+            <div class="confirmacao-acoes">
+
+                <a
+                    href="{{ url_for('index') }}"
+                    class="btn-voltar"
+                >
+                    Voltar para o início
+                </a>
+
+
+                <a
+                    href="{{ url_for('listar_reservas') }}"
+                    class="btn-voltar"
+                >
+                    Ver reservas
+                </a>
+
+
+                <a
+                    href="{{ url_for('reserva') }}"
+                    class="btn-reserva"
+                >
+                    Fazer nova reserva
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Café & Sabor — Sistema de Reservas
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

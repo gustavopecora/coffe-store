@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Café & Sabor</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+    <header>
+
+        <div class="logo">
+            ☕ Café & Sabor
+        </div>
+
+        <nav>
+            <a href="{{ url_for('index') }}">Início</a>
+            <a href="{{ url_for('reserva') }}">Reservar mesa</a>
+            <a href="{{ url_for('listar_reservas') }}">Reservas</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="subtitle">
+                    BEM-VINDO À CAFETERIA
+                </span>
+
+                <h1>
+                    Seu momento especial
+                    começa com um bom café.
+                </h1>
+
+                <p>
+                    Desfrute de cafés especiais, doces deliciosos
+                    e um ambiente aconchegante para compartilhar
+                    bons momentos.
+                </p>
+
+                <a href="{{ url_for('reserva') }}" class="btn-reserva">
+                    Fazer uma reserva
+                </a>
+
+            </div>
+
+            <div class="hero-image">
+                ☕
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DASHBOARD / MÉTRICAS
+        ========================== -->
+
+        <section class="dashboard">
+
+            <div class="dashboard-header">
+
+                <span class="subtitle">
+                    DASHBOARD
+                </span>
+
+                <h2>
+                    Indicadores das reservas
+                </h2>
+
+                <p>
+                    Acompanhe em tempo real as reservas cadastradas
+                    no sistema.
+                </p>
+
+            </div>
+
+
+            <div class="metricas">
+
+                <!-- TOTAL DE RESERVAS -->
+
+                <div class="card-metrica">
+
+                    <div class="card-icone">
+                        📋
+                    </div>
+
+                    <div class="card-info">
+
+                        <span>
+                            Total de reservas
+                        </span>
+
+                        <strong>
+                            {{ total_reservas }}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RESERVAS PENDENTES -->
+
+                <div class="card-metrica">
+
+                    <div class="card-icone">
+                        ⏳
+                    </div>
+
+                    <div class="card-info">
+
+                        <span>
+                            Reservas pendentes
+                        </span>
+
+                        <strong>
+                            {{ reservas_pendentes }}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RESERVAS CONFIRMADAS -->
+
+                <div class="card-metrica">
+
+                    <div class="card-icone">
+                        ✅
+                    </div>
+
+                    <div class="card-info">
+
+                        <span>
+                            Reservas confirmadas
+                        </span>
+
+                        <strong>
+                            {{ reservas_confirmadas }}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ACESSO ÀS RESERVAS
+        ========================== -->
+
+        <section class="sobre">
+
+            <div class="sobre-content">
+
+                <span class="subtitle">
+                    GERENCIAMENTO
+                </span>
+
+                <h2>
+                    Controle suas reservas
+                </h2>
+
+                <p>
+                    Consulte todas as reservas cadastradas,
+                    pesquise por nome ou categoria e altere
+                    o status de cada reserva diretamente pelo
+                    sistema.
+                </p>
+
+                <br>
+
+                <a href="{{ url_for('listar_reservas') }}" class="btn-reserva">
+                    Ver reservas
+                </a>
+
+            </div>
+
+
+            <div class="beneficios">
+
+                <div class="beneficio">
+
+                    <span>☕</span>
+
+                    <h3>
+                        Cafés especiais
+                    </h3>
+
+                    <p>
+                        Bebidas preparadas com carinho e qualidade.
+                    </p>
+
+                </div>
+
+
+                <div class="beneficio">
+
+                    <span>🍰</span>
+
+                    <h3>
+                        Doces deliciosos
+                    </h3>
+
+                    <p>
+                        Opções para acompanhar seu café.
+                    </p>
+
+                </div>
+
+
+                <div class="beneficio">
+
+                    <span>🪑</span>
+
+                    <h3>
+                        Ambiente aconchegante
+                    </h3>
+
+                    <p>
+                        Um espaço confortável para seus momentos.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Café & Sabor — Sistema de Reservas
+        </p>
+
+    </footer>
+
+</body>
+</html>
