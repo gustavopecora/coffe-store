@@ -479,7 +479,7 @@ Nesse caso, o sistema deve informar que o número de pessoas precisa ser um valo
 
 O DER representa a estrutura do banco de dados e o relacionamento entre suas entidades.
 
-![Diagrama Entidade-Relacionamento](docs/der.jpeg)
+![Diagrama Entidade-Relacionamento](docs/der.png)
 
 ### Arquitetura do Sistema
 
